@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Book(author,name){
+            this.author = author;
+            this.name = name;
+        }
+        let n = +prompt("nhập số lượng sách");
+        let a = [];
+        for(let i=0;i<n;i++){
+            let author = prompt("Nhập tên tác giả");
+            let name = prompt("Nhập tên sách");
+            let book = new Book(author,name);
+            a.push(book);
+        }
+        let found = false;
+        let search = prompt("Nhập tên sách muốn tìm");
+        let i;
+        for(i=0;i<n;i++){
+            if(search===a[i].name){
+                found = true;
+                break;
+            }
+        }
+        if(found ){
+            console.log(a[i].name);
+        }else console.log("không tìm thấy sách");
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function product(id,name,price){
+            this.id = id;
+            this.name = name;
+            this.price = price;
+        }
+
+        let n = +prompt("Nhập vào số sản phẩm muốn nhập");
+        let a = [];
+
+        for (let i = 0; i < n; i++) {
+            let id = +prompt("Nhập vào ID của sản phẩm thứ " + (i + 1) + ":");
+            let name = prompt("Nhập vào tên của sản phẩm thứ " + (i + 1) + ":");
+            let price = +prompt("Nhập giá tiền của sản phẩm thứ" + (i + 1) + ":" )
+            let product1 = new product(id, name,price);
+            a.push(product1);
+        }
+        let temp;
+        for (let i = 0; i < n; i++) {
+            for (let j = i + 1; j < n; j++) {
+                if (a[j].price < a[i].price) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        console.log("Sau khi sắp xếp");
+        console.log(a);
+    </script>
+</body>
+</html>

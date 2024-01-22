@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let users = [];
+        function User(id, user_name, email, password) {
+            this.id = id;
+            this.user_name = user_name;
+            this.email = email;
+            this.password = password;
+        }
+        let id = 1;
+        while (true) {
+            let user_name = prompt("Nhập tên người dùng:");
+            let email = prompt("Nhập địa chỉ email:");
+            let password = prompt("Nhập mật khẩu:");
+            if (user_name.length < 3 || email === "" || password.length < 8) {
+                console.log("Dữ liệu không hợp lệ. Vui lòng nhập lại!");
+            } else {
+                let newUser = new User(id, user_name, email, password);
+                users.push(newUser);
+                console.log("Thêm thành công!");
+                id++;
+                break;
+            }
+        }
+        console.log(users);
+    </script>
+</body>
+</html>
